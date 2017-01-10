@@ -75,7 +75,7 @@ class TranslateService extends BaseApplicationComponent
     public function set($locale, array $translations)
     {
         // Determine locale's translation destination file
-        $file = __DIR__.'/../translations/'.$locale.'.php';
+        $file = CRAFT_TRANSLATIONS_PATH . $locale . '.php';
 
         // Get current translation
         if ($current = @include($file)) {
