@@ -146,16 +146,16 @@ class TranslateElementType extends BaseElementType
     public function getSources($context = null)
     {
         // Get plugin sources
-        $pluginSources = array();
-        $plugins = craft()->plugins->getPlugins();
-        foreach ($plugins as $path => $plugin) {
-            $pluginSources['plugins:'.$path] = array(
-                'label' => $plugin->classHandle,
-                'criteria' => array(
-                    'source' => craft()->path->getPluginsPath().$path,
-                ),
-            );
-        }
+//         $pluginSources = array();
+//         $plugins = craft()->plugins->getPlugins();
+//         foreach ($plugins as $path => $plugin) {
+//             $pluginSources['plugins:'.$path] = array(
+//                 'label' => $plugin->classHandle,
+//                 'criteria' => array(
+//                     'source' => craft()->path->getPluginsPath().$path,
+//                 ),
+//             );
+//         }
 
         // Get template sources
         $templateSources = array();
@@ -184,19 +184,19 @@ class TranslateElementType extends BaseElementType
                 'label' => Craft::t('All translations'),
                 'criteria' => array(
                     'source' => array(
-                        craft()->path->getPluginsPath(),
+                      //  craft()->path->getPluginsPath(),
                         craft()->path->getSiteTemplatesPath(),
                     ),
                 ),
             ),
             array('heading' => Craft::t('Default')),
-            'plugins' => array(
-                'label' => Craft::t('Plugins'),
-                'criteria' => array(
-                    'source' => craft()->path->getPluginsPath(),
-                ),
-                'nested' => $pluginSources,
-            ),
+//             'plugins' => array(
+//                 'label' => Craft::t('Plugins'),
+//                 'criteria' => array(
+//                     'source' => craft()->path->getPluginsPath(),
+//                 ),
+//                 'nested' => $pluginSources,
+//             ),
             'templates' => array(
                 'label' => Craft::t('Templates'),
                 'criteria' => array(
